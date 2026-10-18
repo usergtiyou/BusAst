@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+       <loc>https://busast.kz/</loc>
+       <lastmod>2026-10-18T13:43:30+00:00</lastmod>
+       <priority>1.0000</priority>
+  </url>
+  <url>
+       <loc>https://busast.kz/tourists</loc>
+       <lastmod>2026-10-18T13:43:30+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://busast.kz/routes</loc>
+       <lastmod>2026-10-18T13:43:30+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://busast.kz/payment</loc>
+       <lastmod>2026-10-18T13:43:30+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://busast.kz/closed</loc>
+       <lastmod>2026-10-18T13:43:30+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://busast.kz/parks</loc>
+       <lastmod>2026-10-18T13:43:30+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://busast.kz/lrt</loc>
+       <lastmod>2026-10-18T13:43:30+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+</urlset>

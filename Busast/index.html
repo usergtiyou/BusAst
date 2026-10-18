@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H6PNS1T2KX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H6PNS1T2KX');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автобусы Астаны - Главная</title>
+    <meta name="description" content="Автобусы Астаны. Общественный транспорт Астаны" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
+    <link rel="icon" type ="image/png" sizes="16x16" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
+    <link rel="shortcut icon" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">BusAst</a>
+      <button class="theme-toggle" onclick="toggleTheme()">🌓 Сменить тему</button>
+    </div>
+    <nav>
+      <div class="nav-container">
+        <a href="index.html" class="nav-link active">Главная</a>
+        <a href="tourists.html" class="nav-link">Для туристов</a>
+        <a href="routes.html" class="nav-link">Маршруты автобусов</a>
+        <a href="payment.html" class="nav-link">Оплата проезда</a>
+        <a href="closed.html" class="nav-link">Закрытые маршруты</a>
+        <a href="parks.html" class="nav-link">Автопарки</a>
+        <a href="lrt.html" class="nav-link">Tarlan Astana LRT</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Добро пожаловать в транспортный портал Астаны</h1>
+      <p>Актуальная информация об автобусах, тарифах оплаты и развитии городского LRT.</p>
+    </div>
+
+    <h2>Быстрый доступ к сервисам</h2>
+    <div class="grid-cards">
+      <div class="card">
+        <h3>Маршруты </h3>
+        <p>Просматривайте городские, экспресс и пригородные автобусные маршруты столицы.</p>
+      </div>
+      <div class="card">
+        <h3>Для туристов</h3>
+        <p>Для приезжих, которые в первый раз приехали в Астану</p>
+      </div>
+      <div class="card">
+        <h3>Способы оплаты</h3>
+        <p>Узнайте о картах Transcard, QR-оплате через Avtobys и Kaspi.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h4>О портале</h4>
+      <p>Неофициальный информационный справочник общественного транспорта города Астаны. Создан для удобства жителей и гостей столицы а также для помощи приезжим.</p>
+      
+      
+      <p style="margin-top: 0.75rem;">Хотите следить за новостями?</p>
+      <a href="https://t.me/BusAstOfficial" target="_blank" class="telegram-link">
+        Наш Telegram канал
+      </a>
+    </div>
+    <div class="feedback-card">
+  <div class="feedback-icon">✉️</div>
+  <div class="feedback-content">
+    <h4>Увидели ошибку или хотите дополнить информацию?</h4>
+    <p>
+      Напишите нам на почту: 
+      <a href="mailto:officialbusast@gmail.com" class="email-link">officialbusast@gmail.com</a>
+    </p>
+  </div>
+
+    <div class="footer-section">
+      <h4>Быстрая навигация</h4>
+      <ul class="footer-nav">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="tourists.html">Для туристов</a></li>
+        <li><a href="routes.html">Маршруты автобусов</a></li>
+        <li><a href="payment.html">Оплата проезда</a></li>
+        <li><a href="closed.html">Закрытые маршруты</a></li>
+        <li><a href="parks.html">Автопарки</a></li>
+        <li><a href="lrt.html">Tarlan Astana LRT</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Общественный транспорт Астаны. Все права защищены.</p>
+  </div>
+</footer>
+
+  <script>
+  
+  function applySavedTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }
+
+ 
+  applySavedTheme();
+
+  
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme); 
+  }
+</script>
+</body>
+</html>
