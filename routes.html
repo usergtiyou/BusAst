@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H6PNS1T2KX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H6PNS1T2KX');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вокзалы и Аэропорт - Автобусы Астаны</title>
+    <meta name="description" content="Автобусы Астаны. Маршруты автобусов Астаны" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
+<link rel="icon" type ="image/png" sizes="16x16" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
+<link rel="shortcut icon" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">BusAst</a>
+      <button class="theme-toggle" onclick="toggleTheme()">🌓 Сменить тему</button>
+    </div>
+    <nav>
+      <div class="nav-container">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="tourists.html" class="nav-link">Для туристов</a>
+        <a href="routes.html" class="nav-link active">Маршруты автобусов</a>
+        <a href="payment.html" class="nav-link">Оплата проезда</a>
+        <a href="closed.html" class="nav-link">Закрытые маршруты</a>
+        <a href="parks.html" class="nav-link">Автопарки</a>
+        <a href="lrt.html" class="nav-link">Tarlan Astana LRT</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Маршрутная сеть Астаны</h2>
+    <p style="margin-top:0.4rem; color:var(--text-muted);">
+      Полный перечень городских, пригородных и экспресс-автобусов столицы.
+    </p>
+
+    
+    <div class="search-container" style="margin-top: 1.25rem;">
+      <input type="text" id="routeSearch" class="search-input" onkeyup="filterRoutes()" placeholder="Поиск по номеру или остановке...">
+    </div>
+
+    <div class="routes-container">
+      
+      
+      <h3 class="routes-section-title title-city">🏙️ Городские маршруты</h3>
+      <table class="routes-table">
+        <thead class="header-city">
+          <tr>
+            <th style="width: 20%;">№</th>
+            <th>Направление / Конечные остановки</th>
+          </tr>
+        </thead>
+        <tbody class="routes-body">
+          <tr><td class="num-col">№ 1</td><td class="route-col">Жилмассив Кирпичный ➔ АО Газмашаппарат</td></tr>
+          <tr><td class="num-col">№ 2</td><td class="route-col">ЖК Коктем ➔ Парк Коктал</td></tr>
+          <tr><td class="num-col">№ 3</td><td class="route-col">Вокзал Астана-1 ➔ Вокзал "Нұрлы жол"</td></tr>
+          <tr><td class="num-col">№ 4</td><td class="route-col">ЖК Tulpar city ➔ Улица Каршыга Ахмедиярова</td></tr>
+          <tr><td class="num-col">№ 5/5А</td><td class="route-col">Школа №63 ➔ Театр танцев "Наз"</td></tr>
+          <tr><td class="num-col">№ 6</td><td class="route-col">Астанаинерт ➔ Жилмассив Кирпичный</td></tr>
+          <tr><td class="num-col">№ 7</td><td class="route-col">ЖК Жагалау-4 ➔ Орда базар</td></tr>
+          <tr><td class="num-col">№ 8</td><td class="route-col">Улица Болашак ➔ Переулок Дегелен</td></tr>
+          <tr><td class="num-col">№ 9</td><td class="route-col">Вокзал Астана-1 ➔ Детский сад Даурен</td></tr>
+          <tr><td class="num-col">№ 10</td><td class="route-col">Вокзал Астана-1 ➔ Аэропорт</td></tr>
+          <tr><td class="num-col">№ 11</td><td class="route-col">Жилмассив Кирпичный ➔ Вокзал "Нұрлы жол"</td></tr>
+          <tr><td class="num-col">№ 12</td><td class="route-col">Вокзал Астана-1 ➔ Аэропорт</td></tr>
+          <tr><td class="num-col">№ 13</td><td class="route-col">Парк Коктал ➔ Переулок Дегелен</td></tr>
+          <tr><td class="num-col">№ 14</td><td class="route-col">Вокзал Астана-1 ➔ Вокзал "Нұрлы жол"</td></tr>
+          <tr><td class="num-col">№ 15/15А</td><td class="route-col">Жилмассив Железнодорожный ➔ ЖК Capital Park Flowers</td></tr>
+          <tr><td class="num-col">№ 16</td><td class="route-col">Улица Коктал ➔ Улица Алии Молдагуловой</td></tr>
+          <tr><td class="num-col">№ 17</td><td class="route-col">ПМСП Достык ➔ Жагалау-4 ➔ ПМСП Достык</td></tr>
+          <tr><td class="num-col">№ 18</td><td class="route-col">ПМСП Достык ➔ Космический центр ➔ ПСМП Достык</td></tr>
+          <tr><td class="num-col">№ 19</td><td class="route-col">Вокзал Астана-1 ➔ Жилмассив Тельман</td></tr>
+          <tr><td class="num-col">№ 20</td><td class="route-col">Агрогородок ➔ Школа-гимназия №74</td></tr>
+          <tr><td class="num-col">№ 21</td><td class="route-col">Вокзал Астана-1 ➔ Вокзал "Нұрлы жол"</td></tr>
+          <tr><td class="num-col">№ 22/22а</td><td class="route-col">Вокзал Астана-1 ➔ Жилмассив Железнодорожный</td></tr>
+          <tr><td class="num-col">№ 23</td><td class="route-col">Вокзал Астана-1 ➔ Акмолинская областная больница №2</td></tr>
+          <tr><td class="num-col">№ 24</td><td class="route-col">ЖК Бастау ➔ Разъезд №39</td></tr>
+          <tr><td class="num-col">№ 24Н</td><td class="route-col">ЖК Бастау ➔ Жилмассив Нефтяников</td></tr>
+          <tr><td class="num-col">№ 25</td><td class="route-col">Вокзал Астана-1 ➔ ТОО "Теплотранзит"</td></tr>
+          <tr><td class="num-col">№ 26</td><td class="route-col">ЖК Багыстан ➔ Магазин Айдана</td></tr>
+          <tr><td class="num-col">№ 27</td><td class="route-col">ЖК Багыстан ➔ УМТО</td></tr>
+          <tr><td class="num-col">№ 28</td><td class="route-col">ЖК Нура-Есиль ➔ Жилмассив Акбидай</td></tr>
+          <tr><td class="num-col">№ 29/29а</td><td class="route-col">Детский сад Даурен ➔ ЖК Жагалау-4</td></tr>
+          <tr><td class="num-col">№ 30</td><td class="route-col">ЖК Зелёный квартал ➔ Улица Сусамыр</td></tr>
+          <tr><td class="num-col">№ 31</td><td class="route-col">ЖК Бастау ➔ Вокзал Астана-1</td></tr>
+          <tr><td class="num-col">№ 32</td><td class="route-col">ЖК Эльбрус ➔ Улица Болашак</td></tr>
+          <tr><td class="num-col">№ 33</td><td class="route-col">Агрогородок ➔ ЖК Омир Озен</td></tr>
+          <tr><td class="num-col">№ 35</td><td class="route-col">ЖК Jetisu.Aqsu ➔ Жилмассив Караоткель-2</td></tr>
+          <tr><td class="num-col">№ 36</td><td class="route-col">Вокзал Астана-1 ➔ Жилмассив Караоткель-2</td></tr>
+          <tr><td class="num-col">№ 37</td><td class="route-col">Астанаинерт ➔ Космический центр ➔ Астанаинерт</td></tr>
+          <tr><td class="num-col">№ 39</td><td class="route-col">Астанаинерт ➔ Рынок Орда</td></tr>
+          <tr><td class="num-col">№ 40</td><td class="route-col">Вокзал Астана-1 ➔ Пожарная часть №4</td></tr>
+          <tr><td class="num-col">№ 41</td><td class="route-col">Орда Базар ➔ Жилмассив Промышленный</td></tr>
+          <tr><td class="num-col">№ 42</td><td class="route-col">Астанаинерт ➔ Пожарная часть №4</td></tr>
+          <tr><td class="num-col">№ 43</td><td class="route-col">Микрорайон Отау ➔ Мечеть Нурсултан ➔ Микрорайон Отау</td></tr>
+          <tr><td class="num-col">№ 44</td><td class="route-col">Школа-гимназия №63 ➔ ЖК Жагалау-3 ➔ Школа-гимназия №63</td></tr>
+          <tr><td class="num-col">№ 45</td><td class="route-col">Орда базар ➔ ТД Adil</td></tr>
+          <tr><td class="num-col">№ 46</td><td class="route-col">ЖК Комфорт-Таун ➔ Улица Карасу</td></tr>
+          <tr><td class="num-col">№ 47</td><td class="route-col">Переулок Дегелен ➔ ЖК Куршевель</td></tr>
+          <tr><td class="num-col">№ 48</td><td class="route-col">Вокзал Астана-1 ➔ Вокзал "Нұрлы жол"</td></tr>
+          <tr><td class="num-col">№ 49</td><td class="route-col">ЖК Алтын бесик ➔ ЖК Tulpar city</td></tr>
+          <tr><td class="num-col">№ 50</td><td class="route-col">Парк Коктал ➔ Жилмассив Промышленный</td></tr>
+          <tr><td class="num-col">№ 51</td><td class="route-col">Акмолинская областная больница №2 ➔ Жилой комплекс Орман Парк</td></tr>
+          <tr><td class="num-col">№ 52</td><td class="route-col">Жилмассив Тельмана ➔ ТД Асем</td></tr>
+          <tr><td class="num-col">№ 53</td><td class="route-col">ЖК Куршевель ➔ Орда базар</td></tr>
+          <tr><td class="num-col">№ 54</td><td class="route-col">Улица Болашак ➔ ЖК Комфорт-таун</td></tr>
+          <tr><td class="num-col">№ 55А/55Б</td><td class="route-col">Акмолинская областная больница №2 ➔ Акмолинская областная больница №2 (55А по часовой стрелке, 55Б против часовой)</td></tr>
+          <tr><td class="num-col">№ 56</td><td class="route-col">Жилмассив Промышленный ➔ ЖК Жагалау-4</td></tr>
+          <tr><td class="num-col">№ 57</td><td class="route-col">ЖК Ак-Дидар ➔ Вокзал "Нұрлы жол"</td></tr>
+          <tr><td class="num-col">№ 58</td><td class="route-col">ЖК Куршевель ➔ Агрогородок</td></tr>
+          <tr><td class="num-col">№ 59</td><td class="route-col">ТД Коктем ➔ Экспресс 32 км</td></tr>
+          <tr><td class="num-col">№ 60А/60Б</td><td class="route-col">Городская больница №1 ➔ Школа-гимназия №63(60А по часовой стрелке, 60Б против часовой)</td></tr>
+          <tr><td class="num-col">№ 61</td><td class="route-col">ТОО "Теплотранзит" ➔ Улица Шафика Чокина</td></tr>
+          <tr><td class="num-col">№ 62</td><td class="route-col">Улица Байзак Датка ➔ Микрорайон Отау</td></tr>
+          <tr><td class="num-col">№ 63</td><td class="route-col">Улица Шафика Чокина ➔ Вокзал Астана-1</td></tr>
+          <tr><td class="num-col">№ 64</td><td class="route-col">Улица Карасу ➔ Завод по производству мебели ➔ Улица Карасу</td></tr>
+          <tr><td class="num-col">№ 65</td><td class="route-col">Микрорайон Отау ➔ Улица Болашак</td></tr>
+          <tr><td class="num-col">№ 66</td><td class="route-col">Вокзал "Нұрлы жол" ➔ Афганский квартал</td></tr>
+          <tr><td class="num-col">№ 67</td><td class="route-col">Мечеть Ырыскелды Кажы ➔ ЖК Орман парк</td></tr>
+          <tr><td class="num-col">№ 68</td><td class="route-col">ЖК Багыстан ➔ АО Газмашаппарат</td></tr>
+          <tr><td class="num-col">№ 69</td><td class="route-col">Улица Медеу ➔ Кладбище</td></tr>
+          <tr><td class="num-col">№ 70</td><td class="route-col">Пожарная часть №4 ➔ Минимаркет Азамат ➔ Пожарная часть №4</td></tr>
+          <tr><td class="num-col">№ 71</td><td class="route-col">Микрорайон Отау ➔ ЖК Tulpar city</td></tr>
+          <tr><td class="num-col">№ 72</td><td class="route-col">Школа-лицей №64 ➔ Специализированная пожарная часть №24</td></tr>
+          <tr><td class="num-col">№ 73</td><td class="route-col">Парк Коктал ➔ Жилмассив Промышленный ➔ Парк Коктал</td></tr>
+          <tr><td class="num-col">№ 74</td><td class="route-col">ЖК Алтын бесик ➔ Переулок Дегелен</td></tr>
+          <tr><td class="num-col">№ 75</td><td class="route-col">Вокзал "Нұрлы жол" ➔ Жилмассив Куйгенжар</td></tr>
+          <tr><td class="num-col">№ 76</td><td class="route-col">Рынок Алай ➔ Жилмассив Железнодорожный</td></tr>
+          <tr><td class="num-col">№ 78</td><td class="route-col">Национальный кординационный центр экстренной помощи</td></tr>
+          <tr><td class="num-col">№ 80</td><td class="route-col">Акмолинская областная больница №2 ➔ Жилмассив Куйгенжар</td></tr>
+          <tr><td class="num-col">№ 81</td><td class="route-col">Орда базар ➔ Специализированный ЦОН</td></tr>
+          <tr><td class="num-col">№ 82</td><td class="route-col">Орда базар ➔ Школа Зерде</td></tr>
+          <tr><td class="num-col">№ 83</td><td class="route-col">Вокзал Астана-1 ➔ Разъезд №39</td></tr>
+          <tr><td class="num-col">№ 84</td><td class="route-col">ЖК Алтын бесик ➔ Школа-лицей №64</td></tr>
+          <tr><td class="num-col">№ 85</td><td class="route-col">Улица Сусамыр ➔ Жилмассив Кирпичный</td></tr>
+          <tr><td class="num-col">№ 120</td><td class="route-col">ЕЦ 166/10 учереждение ➔ общество Асар</td></tr>
+          <tr><td class="num-col">№ 120А</td><td class="route-col">ЕЦ 166/10 учереждение ➔ ЖК Жасыл Ел</td></tr>
+          <tr><td class="num-col">№ 121</td><td class="route-col">ЖК Бастау ➔ Микрорайон Шубар ➔ ЖК Бастау</td></tr>
+        </tbody>
+      </table>
+
+      
+      <h3 class="routes-section-title title-suburban">Пригородные маршруты</h3>
+      <div class="route-info-box route-info-suburban">
+  <p>
+    <strong>Пригородные маршруты (№ 302-329)</strong> обеспечивают транспортную связь столицы с близлежащими населёнными пунктами Акмолинской области (город Косшы, сёла Жибек Жолы, Коянды, Талапкер, Кабанбай батыра и др.). Посадка осуществляется на крупных пересадочных узлах (ТРЦ Asia-park, Акмолинская городская №2, Рынок Алай, улица Медеу). Стоимость проезда при безналичной оплате 13 теңге за километр. При наличной оплате 19 теңге за километр
+  </p>
+</div>
+      <table class="routes-table">
+        <thead class="header-suburban">
+          <tr>
+            <th style="width: 20%;">№</th>
+            <th>Направление / Конечные остановки</th>
+          </tr>
+        </thead>
+        <tbody class="routes-body">
+          <tr><td class="num-col">№ 302</td><td class="route-col">Кардиохирургическая клиника ➔ Село Тайтобе</td></tr>
+          <tr><td class="num-col">№ 303</td><td class="route-col">Кардиохирургическая клиника ➔ Город Косшы</td></tr>
+          <tr><td class="num-col">№ 304</td><td class="route-col">Акмолинская областная больница №2 ➔ Село Жибек Жолы</td></tr>
+          <tr><td class="num-col">№ 305</td><td class="route-col">ТРЦ Asia-park ➔ Село Акмол</td></tr>
+          <tr><td class="num-col">№ 306</td><td class="route-col">Улица Медеу ➔ Село Талапкер</td></tr>
+          <tr><td class="num-col">№ 307/307А</td><td class="route-col">Рынок Алай ➔ Село Коянды</td></tr>
+          <tr><td class="num-col">№ 308</td><td class="route-col">Кардиохирургическая клиника ➔ Село Кабанбая Батыра</td></tr>
+          <tr><td class="num-col">№ 309</td><td class="route-col">Кардиохирургическая клиника ➔ Село Рахымжана Кошкарбаева</td></tr>
+          <tr><td class="num-col">№ 310</td><td class="route-col">Улица Медеу ➔ Село Арайлы</td></tr>
+          <tr><td class="num-col">№ 311</td><td class="route-col">Улица Медеу ➔ Село Нуресиль</td></tr>
+          <tr><td class="num-col">№ 312</td><td class="route-col">ТРЦ Asia-park ➔ Село Отемыс</td></tr>
+          <tr><td class="num-col">№ 313</td><td class="route-col">Акмолинская областная больница №2 ➔ Село Кызылсуат</td></tr>
+          <tr><td class="num-col">№ 314</td><td class="route-col">Назарбаев Университет ➔ Село Кызылсуат</td></tr>
+          <tr><td class="num-col">№ 315</td><td class="route-col">Акмолинская областная больница №2 ➔ Село Акбулак</td></tr>
+          <tr><td class="num-col">№ 316</td><td class="route-col">Акмолинская областная больница ➔ Село Жалтырколь</td></tr>
+          <tr><td class="num-col">№ 317</td><td class="route-col">Рынок Алай ➔ Село Софиевка</td></tr>
+          <tr><td class="num-col">№ 318</td><td class="route-col">Акмолинская областная больница №2 ➔ Село Шубар</td></tr>
+          <tr><td class="num-col">№ 319</td><td class="route-col">Улица Медеу ➔ Село Ыбырая Алтынсарина</td></tr>
+          <tr><td class="num-col">№ 320</td><td class="route-col">Школа-лицей №85 ➔ Город Косшы</td></tr>
+          <tr><td class="num-col">№ 321</td><td class="route-col">Акмолинская областная больница №2 ➔ Дачный посёлок Нурлы</td></tr>
+          <tr><td class="num-col">№ 322</td><td class="route-col">Акмолинская областная больница №2 ➔ Жибек Жолы</td></tr>
+          <tr><td class="num-col">№ 323</td><td class="route-col">Школа-лицей №85 ➔ Город Косшы</td></tr>
+          <tr><td class="num-col">№ 326</td><td class="route-col">Улица Медеу ➔ Село Талапкер</td></tr>
+          <tr><td class="num-col">№ 327</td><td class="route-col">Акмолинская областная больница №2 ➔ Село Арнасай</td></tr>
+          <tr><td class="num-col">№ 328</td><td class="route-col">Улица Медеу ➔ Село Ынтымак</td></tr>
+          <tr><td class="num-col">№ 329</td><td class="route-col">Центральный рынок ➔ Село Бозайгыр</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="routes-section-title title-express">Экспресс-маршруты</h3>
+      <div class="route-info-box route-info-express">
+  <p>
+    <strong>Экспресс-маршруты (№ 501-508)</strong> это быстрая связь между отдаленными районами и ключевыми точками города с минимальным количеством остановок. Автобусы останавливаются только на ключевых пересадочных пунктах и у крупных жилых комплексов. Они пропускают мелкие второстепенные остановки, за счет чего путь из одного конца города в другой занимает значительно меньше времени, так что перед тем как сесть, узнайте, останавливается ли он на нужной вам остановке. Стоимость проезда 300 теңге при безналичной оплате. С наличной оплатой проезд будет стоить 400 теңге.
+  </p>
+</div>
+      <table class="routes-table">
+        <thead class="header-express">
+          <tr>
+            <th style="width: 20%;">№</th>
+            <th>Направление / Конечные остановки</th>
+          </tr>
+        </thead>
+        <tbody class="routes-body">
+          <tr>
+            <td class="num-col">
+              № 501<br><span class="express-tag">Экспресс</span>
+            </td>
+            <td class="route-col">Аэропорт ➔ Улица 150-летия Абая</td>
+          </tr>
+          <tr>
+            <td class="num-col">
+              № 502<br><span class="express-tag">Экспресс</span>
+            </td>
+            <td class="route-col">ЖК Багыстан ➔ Вокзал Астана-1</td>
+          </tr>
+          <tr>
+            <td class="num-col">
+              № 503<br><span class="express-tag">Экспресс</span>
+            </td>
+            <td class="route-col">Астанаинерт ➔ Вокзал "Нұрлы жол"</td>
+          </tr>
+          <tr>
+            <td class="num-col">
+              № 504<br><span class="express-tag">Экспресс</span>
+            </td>
+            <td class="route-col">ТОО "Теплотранзит" ➔ ЖК Жагалау-4</td>
+          </tr>
+          <tr>
+            <td class="num-col">
+              № 505<br><span class="express-tag">Экспресс</span>
+            </td>
+            <td class="route-col">Микрорайон Отау ➔ Мечеть Ырыскельды Кажы ➔ Микрорайон Отау</td>
+          </tr>
+          <tr>
+            <td class="num-col">
+              № 506<br><span class="express-tag">Экспресс</span>
+            </td>
+            <td class="route-col">ЖК Куршевель ➔ Улица Ильяса Жансугурова</td>
+          </tr>
+          <tr>
+            <td class="num-col">
+              № 507<br><span class="express-tag">Экспресс</span>
+            </td>
+            <td class="route-col">ЖК Жагалау-4 ➔ Вокзал "Нұрлы жол"</td>
+          </tr>
+          <tr>
+            <td class="num-col">
+              № 508<br><span class="express-tag">Экспресс</span>
+            </td>
+            <td class="route-col">УМТО ➔ Вокзал "Нұрлы жол"</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    
+<h3 class="routes-section-title title-minibus"> Маршрутное такси (Косшы)</h3>
+
+
+<div class="route-info-box route-info-minibus">
+  <p>
+    📱 <strong>Маршрут № 701</strong> - специализированное маршрутное такси, связывающее Косшы с селом Тайтобе. Отслеживание местоположения автобуса и удобная оплата проезда доступны в мобильном приложении <strong>Avtobys</strong>.
+  </p>
+</div>
+
+
+<table class="routes-table">
+  <thead class="header-minibus">
+    <tr>
+      <th style="width: 20%;">№</th>
+      <th>Направление / Конечные остановки</th>
+    </tr>
+  </thead>
+  <tbody class="routes-body">
+    <tr>
+      <td class="num-col">
+        № 701<br><span class="minibus-tag">Маршрутка</span>
+      </td>
+      <td class="route-col">Школа-гимназия(Косшы) - село Тайтобе</td>
+    </tr>
+  </tbody>
+</table>
+    
+<h3 class="routes-section-title title-shuttle"> Спортивные шаттл-басы (Специальные маршруты)</h3>
+
+
+<div class="route-info-box route-info-shuttle">
+  <p>
+    <strong>Спортивные шаттл-басы (№ 801–808)</strong> — это специальные целевые маршруты, запускаемые во время крупных культурных, спортивных и праздничных мероприятий (на стадионы «Астана Арена», «Барыс Арена», ипподром «Казанат» и др.). Они доставляют зрителей от крупных парковочных зон и пересадочных хабов до мест проведения событий и обратно.
+  </p>
+</div>
+
+<table class="routes-table">
+  <thead class="header-shuttle">
+    <tr>
+      <th style="width: 20%;">№</th>
+      <th>Направление / Перехватывающие парковки и пункты назначения</th>
+    </tr>
+  </thead>
+  <tbody class="routes-body">
+    <tr>
+      <td class="num-col">
+        № 801<br><span class="shuttle-tag">Шаттл</span>
+      </td>
+      <td class="route-col">Детский сад Бал бала ➔ Стадион "Астана Арена"</td>
+    </tr>
+    <tr>
+      <td class="num-col">
+        № 802<br><span class="shuttle-tag">Шаттл</span>
+      </td>
+      <td class="route-col">ТД Коктем ➔ Стадион "Астана Арена"</td>
+    </tr>
+    <tr>
+      <td class="num-col">
+        № 803<br><span class="shuttle-tag">Шаттл</span>
+      </td>
+      <td class="route-col">АО "Астана Моторс" ➔ Стадион "Астана Арена"</td>
+    </tr>
+    <tr>
+      <td class="num-col">
+        № 804<br><span class="shuttle-tag">Шаттл</span>
+      </td>
+      <td class="route-col">Школа-гимназия №63 ➔ Стадион "Астана Арена"</td>
+    </tr>
+    <tr>
+      <td class="num-col">
+        № 805<br><span class="shuttle-tag">Шаттл</span>
+      </td>
+      <td class="route-col">Детский сад Бал бала ➔ Спорткомплекс "Барыс Арена"</td>
+    </tr>
+    <tr>
+      <td class="num-col">
+        № 806<br><span class="shuttle-tag">Шаттл</span>
+      </td>
+      <td class="route-col">Школа-гимназия №63 ➔ Спорткомплекс "Барыс Арена"</td>
+    </tr>
+    <tr>
+      <td class="num-col">
+        № 807<br><span class="shuttle-tag">Шаттл</span>
+      </td>
+      <td class="route-col">АО "Астана Моторс" ➔ Стадион "Астана Арена"</td>
+    </tr>
+    <tr>
+      <td class="num-col">
+        № 808<br><span class="shuttle-tag">Шаттл</span>
+      </td>
+      <td class="route-col">Спорткомплекс "Барыс Арена" ➔ ТД "Коктем"</td>
+    </tr>
+  </tbody>
+</table>
+  </main>
+
+  
+  <footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h4>О портале</h4>
+      <p>Неофициальный информационный справочник общественного транспорта города Астаны. Создан для удобства жителей и гостей столицы а также для помощи приезжим.</p>
+      
+      
+      <p style="margin-top: 0.75rem;">Хотите следить за новостями?</p>
+      <a href="https://t.me/BusAstOfficial" target="_blank" class="telegram-link">
+        Наш Telegram канал
+      </a>
+    </div>
+    <div class="feedback-card">
+  <div class="feedback-icon">✉️</div>
+  <div class="feedback-content">
+    <h4>Увидели ошибку или хотите дополнить информацию?</h4>
+    <p>
+      Напишите нам на почту: 
+      <a href="mailto:officialbusast@gmail.com" class="email-link">officialbusast@gmail.com</a>
+    </p>
+  </div>
+
+    <div class="footer-section">
+      <h4>Быстрая навигация</h4>
+      <ul class="footer-nav">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="tourists.html">Для туристов</a></li>
+        <li><a href="routes.html">Маршруты автобусов</a></li>
+        <li><a href="payment.html">Оплата проезда</a></li>
+        <li><a href="closed.html">Закрытые маршруты</a></li>
+        <li><a href="parks.html">Автопарки</a></li>
+        <li><a href="lrt.html">Tarlan Astana LRT</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Общественный транспорт Астаны. Все права защищены.</p>
+  </div>
+</footer>
+
+  <script>
+    function applySavedTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+    applySavedTheme();
+
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    }
+
+    
+    function filterRoutes() {
+      const input = document.getElementById('routeSearch');
+      const filter = input.value.toLowerCase();
+      const rows = document.querySelectorAll('.routes-body tr');
+
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(filter) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
