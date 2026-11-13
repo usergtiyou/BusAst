@@ -2066,15 +2066,5 @@ nav {
 .nav-menu {
   display: flex;
   overflow-x: auto;
-  white-space: nowrap;
-  justify-content: flex-start; 
-  padding: 0 16px; 
-  gap: 20px;
-  -webkit-overflow-scrolling: touch; 
-}
-
-@media (min-width: 768px) {
-  .nav-menu {
-    justify-content: center;
-  }
+  justify-content: safe center;
 }
