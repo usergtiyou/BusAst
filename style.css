@@ -94,14 +94,35 @@ nav::-webkit-scrollbar {
   display: none;
 }
 
-.nav-container {
+/* Вся синяя полоса навигации */
+nav {
   width: 100%;
-  max-width: 100%; 
-  margin: 0;       
-  padding-left: 7rem !important; 
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+}
+
+/* Внутренний контейнер с кнопками */
+.nav-container {
+  display: flex;
+  justify-content: center; /* Центрирует все пункты меню */
+  flex-wrap: wrap;         /* Чтобы на узких экранах кнопки не уезжали за край */
+  width: 100%;
+  max-width: 1400px;       /* Ограничивает растяжение на сверхшироких экранах */
+  margin: 0 auto;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow-x: auto;
+}
+
+
+@media (max-width: 1100px) {
+  .nav-container {
+    justify-content: flex-start;
+  }
 }
 
 .nav-link {
@@ -2008,42 +2029,3 @@ html {
   color: #0284c7 !important; 
 }
 
-nav {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: center; 
-  flex-wrap: wrap;        
-  width: 100%;
-  max-width: 1400px;       
-  margin: 0 auto;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  overflow-x: auto;
-}
-
-
-@media (max-width: 1100px) {
-  .nav-container {
-    justify-content: flex-start;
-  }
-}
-
-.text-link {
-  color: #3b82f6; 
-  text-decoration: underline;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.text-link:hover {
-  color: #60a5fa; 
-}
