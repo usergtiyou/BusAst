@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H6PNS1T2KX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H6PNS1T2KX');
+</script>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0284c7">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BusAst">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('PWA Service Worker зарегистрирован успешно'))
+        .catch(err => console.log('Ошибка регистрации PWA:', err));
+    });
+  }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вокзалы и Аэропорт - Автобусы Астаны</title>
+    <link rel="canonical" href="https://busast.kz/tourists.html">
+    <meta name="description" content="Автобусы Астаны. Общественный транспорт Астаны" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
+<link rel="icon" type ="image/png" sizes="16x16" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
+<link rel="shortcut icon" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
+</head>
+<!DOCTYPE html>
+<html lang="ru">
+<body id="top">
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">BusAst</a>
+      <div class="header-controls">
+      <select class="city-select" id="citySelect">
+        <option value="astana" selected>Астана</option>
+        <option value="almaty">Алматы (скоро)</option>
+        <option value="shymkent">Шымкент (скоро)</option>
+      </select>
+    </div>
+      <button class="theme-toggle" onclick="toggleTheme()">🌓 Сменить тему</button>
+      
+    </div>
+  <nav>
+      <div class="nav-container">
+        <div class="nav-link" data-href="index.html">Главная</div>
+        <div class="nav-link" data-href="tourists.html">Для туристов</div>
+        <div class="nav-link" data-href="routes.html">Маршруты автобусов</div>
+        <div class="nav-link" data-href="payment.html">Оплата проезда</div>
+        <div class="nav-link" data-href="closed.html">Закрытые маршруты</div>
+        <div class="nav-link" data-href="parks.html">Автопарки</div>
+        <div class="nav-link" data-href="lrt.html">Tarlan Astana LRT</div>
+        <div class="nav-link" data-href="hubs.html">Пересадочные узлы</div>
+        <div class="nav-link active" data-href="apps.html">Полезные приложения</div>
+        <div class="nav-link" data-href="calc.html">Калькулятор</div>
+        </div>
+    </nav>
+  </header>
+  <main class="page-container">
+  <span class="reading-time">Время чтения: 1 мин</span>
+  <h1 class="page-title">Полезные приложения и сервисы</h1>
+  <p class="page-subtitle">Официальные сервисы для онлайн-оплаты, отслеживания автобусов и построения маршрутов.</p>
+
+  <div class="apps-grid">
+    <div class="app-card">
+      <h3>Avtobys</h3>
+      <p>Официальное приложение для оплаты проезда по QR-коду, Bluetooth или госномеру.</p>
+      <a href="https://avtobys.kz/" target="_blank" rel="noopener" class="app-link">Перейти в Avtobys</a>
+    </div>
+
+    <div class="app-card">
+      <h3>2GIS </h3>
+      <p>Подробные карты, схемы автобусных маршрутов в реальном времени, отслеживание движения и поиск оптимальных пересадок.</p>
+      <a href="https://2gis.kz/astana" target="_blank" rel="noopener" class="app-link">Открыть 2GIS</a>
+    </div>
+
+    <div class="app-card">
+      <h3>Kaspi.kz</h3>
+      <p>Удобная оплата проезда через сканирование QR-кодов Avtobys напрямую из банковского приложения.</p>
+      <a href="https://kaspi.kz/" target="_blank" rel="noopener" class="app-link">Открыть Kaspi.kz</a>
+    </div>
+  </div>
+</main>
+  <footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h4>О портале</h4>
+      <p>Неофициальный информационный справочник общественного транспорта города Астаны. Создан для удобства жителей и гостей столицы а также для помощи приезжим.</p>
+      
+      
+      <p style="margin-top: 0.75rem;">Хотите следить за новостями?</p>
+      <a href="https://t.me/BusAstOfficial" target="_blank" class="telegram-link">
+        Наш Telegram канал
+      </a>
+    </div>
+    <div class="feedback-card">
+  <div class="feedback-icon">✉️</div>
+  <div class="feedback-content">
+    <h4>Увидели ошибку или хотите дополнить информацию?</h4>
+    <p>
+      Напишите нам на почту: 
+      <a href="mailto:officialbusast@gmail.com" class="email-link">officialbusast@gmail.com</a>
+    </p>
+  </div>
+
+     <div class="footer-section">
+      <h4>Быстрая навигация</h4>
+      <ul class="footer-nav">
+        <div class="footer-links">
+        <div class="footer-link" data-href="index.html">Главная</div>
+        <div class="footer-link" data-href="tourists.html">Для туристов</div>
+        <div class="footer-link" data-href="routes.html">Маршруты</div>
+        <div class="footer-link" data-href="payment.html">Оплата</div>
+        <div class="footer-link" data-href="closed.html">Закрытые маршруты</div>
+        <div class="footer-link" data-href="parks.html">Автопарки</div>
+        <div class="footer-link" data-href="lrt.html">Tarlan Astana LRT</div>
+        <div class="footer-link" data-href="hubs.html">Пересадочные узлы</div>
+        <div class="footer-link" data-href="apps.html">Приложения</div>
+        <div class="footer-link" data-href="calc.html">Калькулятор</div>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Общественный транспорт Астаны. Все права защищены.</p>
+  </div>
+</footer>
+
+  <script>
+    function applySavedTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+    applySavedTheme();
+
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    }
+  </script>
+ <div class="back-to-top" data-scroll-top title="Наверх">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</div>
+<script>
+  document.addEventListener('click', function(e) {
+   
+    const scrollTopBtn = e.target.closest('[data-scroll-top]');
+    if (scrollTopBtn) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+   
+    const target = e.target.closest('[data-href]');
+    if (target) {
+      const url = target.getAttribute('data-href');
+      const isExternal = target.getAttribute('data-target') === '_blank';
+
+      
+      if (e.ctrlKey || e.metaKey || e.button === 1) {
+        window.open(url, '_blank');
+        return;
+      }
+
+   
+      if (isExternal) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      } else {
+     
+        window.location.href = url;
+      }
+    }
+  });
+</script>
+</body>
+</html>

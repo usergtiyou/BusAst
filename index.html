@@ -11,6 +11,22 @@
 
   gtag('config', 'G-H6PNS1T2KX');
 </script>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0284c7">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BusAst">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('PWA Service Worker зарегистрирован успешно'))
+        .catch(err => console.log('Ошибка регистрации PWA:', err));
+    });
+  }
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Автобусы Астаны</title>
@@ -33,22 +49,33 @@
     <link rel="apple-touch-icon" sizes="180x180" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
     <link rel="shortcut icon" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
 </head>
-<body>
+<body id="top">
   <header>
     <div class="header-container">
       <a href="index.html" class="logo">BusAst</a>
+      <div class="header-controls">
+      <select class="city-select" id="citySelect">
+        <option value="astana" selected>Астана</option>
+        <option value="almaty">Алматы (скоро)</option>
+        <option value="shymkent">Шымкент (скоро)</option>
+      </select>
+    </div>
       <button class="theme-toggle" onclick="toggleTheme()">🌓 Сменить тему</button>
     </div>
-    <nav>
+    
+  <nav>
       <div class="nav-container">
-        <a href="index.html" class="nav-link active">Главная</a>
-        <a href="tourists.html" class="nav-link">Для туристов</a>
-        <a href="routes.html" class="nav-link">Маршруты автобусов</a>
-        <a href="payment.html" class="nav-link">Оплата проезда</a>
-        <a href="closed.html" class="nav-link">Закрытые маршруты</a>
-        <a href="parks.html" class="nav-link">Автопарки</a>
-        <a href="lrt.html" class="nav-link">Tarlan Astana LRT</a>
-      </div>
+        <div class="nav-link active" data-href="index.html">Главная</div>
+        <div class="nav-link" data-href="tourists.html">Для туристов</div>
+        <div class="nav-link" data-href="routes.html">Маршруты автобусов</div>
+        <div class="nav-link" data-href="payment.html">Оплата проезда</div>
+        <div class="nav-link" data-href="closed.html">Закрытые маршруты</div>
+        <div class="nav-link" data-href="parks.html">Автопарки</div>
+        <div class="nav-link" data-href="lrt.html">Tarlan Astana LRT</div>
+        <div class="nav-link" data-href="hubs.html">Пересадочные узлы</div>
+        <div class="nav-link" data-href="apps.html">Полезные приложения</div>
+        <div class="nav-link" data-href="calc.html">Калькулятор</div>
+        </div>
     </nav>
   </header>
 
@@ -73,14 +100,54 @@
         <p>Узнайте о картах Transcard, QR-оплате через Avtobys и Kaspi.</p>
       </div>
     </div>
-  </main>
 
+<section class="faq-section">
+  <h2 class="section-title">❓ Часто задаваемые вопросы по транспорту</h2>
+  <div class="faq-accordion">
+
+    <details class="faq-item">
+      <summary>Со скольки и до скольки ходят автобусы в Астане?</summary>
+      <div class="faq-answer">
+        Большинство городских маршрутов работают ежедневно с <strong>06:00 до 23:00</strong>. Интервалы движения в час пик составляют 5–10 минут, в вечернее время — до 15–20 минут.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Как отслеживать движение автобусов в реальном времени?</summary>
+      <div class="faq-answer">
+        Отслеживать движение транспорта в прямом эфире можно через мобильные приложения <strong>2GIS</strong> и <strong>Avtobys</strong>, где отображаются текущие геопозиции автобусов.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Сколько стоит проезд в общественном транспорте?</summary>
+      <div class="faq-answer">
+        Стоимость разового проезда по безналичному расчету (QR, карта Transcard, SMS, Bluetooth) составляет <strong>110 ₸</strong> на городских маршрутах. Проезд для детей до 18 лет — бесплатный при наличии валидации.
+      </div>
+    </details>
+
+<section class="quick-contacts-section">
+  <h2 class="section-title">📞 Справочные и экстренные службы</h2>
+  
+  <div class="quick-contacts-grid">
+    <div class="qc-card">
+      <span class="qc-icon"></span>
+      <div class="qc-info">
+        <span class="qc-label">Единый контакт-центр Астаны</span>
+        <span class="phone" data-href="tel:109">109</span>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+  </div>
+</section>
+  </main>
   <footer>
   <div class="footer-container">
     <div class="footer-section">
       <h4>О портале</h4>
       <p>Неофициальный информационный справочник общественного транспорта города Астаны. Создан для удобства жителей и гостей столицы а также для помощи приезжим.</p>
-      
       
       <p style="margin-top: 0.75rem;">Хотите следить за новостями?</p>
       <a href="https://t.me/BusAstOfficial" target="_blank" class="telegram-link">
@@ -100,13 +167,18 @@
     <div class="footer-section">
       <h4>Быстрая навигация</h4>
       <ul class="footer-nav">
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="tourists.html">Для туристов</a></li>
-        <li><a href="routes.html">Маршруты автобусов</a></li>
-        <li><a href="payment.html">Оплата проезда</a></li>
-        <li><a href="closed.html">Закрытые маршруты</a></li>
-        <li><a href="parks.html">Автопарки</a></li>
-        <li><a href="lrt.html">Tarlan Astana LRT</a></li>
+        <div class="footer-links">
+        <div class="footer-link" data-href="index.html">Главная</div>
+        <div class="footer-link" data-href="tourists.html">Для туристов</div>
+        <div class="footer-link" data-href="routes.html">Маршруты</div>
+        <div class="footer-link" data-href="payment.html">Оплата</div>
+        <div class="footer-link" data-href="closed.html">Закрытые маршруты</div>
+        <div class="footer-link" data-href="parks.html">Автопарки</div>
+        <div class="footer-link" data-href="lrt.html">Tarlan Astana LRT</div>
+        <div class="footer-link" data-href="hubs.html">Пересадочные узлы</div>
+        <div class="footer-link" data-href="apps.html">Приложения</div>
+        <div class="footer-link" data-href="calc.html">Калькулятор</div>
+</div>
       </ul>
     </div>
   </div>
@@ -133,6 +205,40 @@
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme); 
   }
+</script>
+<div class="back-to-top" data-scroll-top title="Наверх">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</div>
+<script>
+  document.addEventListener('click', function(e) {
+   
+    const scrollTopBtn = e.target.closest('[data-scroll-top]');
+    if (scrollTopBtn) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+   
+    const target = e.target.closest('[data-href]');
+    if (target) {
+      const url = target.getAttribute('data-href');
+      const isExternal = target.getAttribute('data-target') === '_blank';
+
+      
+      if (e.ctrlKey || e.metaKey || e.button === 1) {
+        window.open(url, '_blank');
+        return;
+      }
+
+   
+      if (isExternal) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      } else {
+     
+        window.location.href = url;
+      }
+    }
+  });
 </script>
 </body>
 </html>

@@ -10,6 +10,21 @@
 
   gtag('config', 'G-H6PNS1T2KX');
 </script>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0284c7">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BusAst">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('PWA Service Worker зарегистрирован успешно'))
+        .catch(err => console.log('Ошибка регистрации PWA:', err));
+    });
+  }
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Автопарки - Автобусы Астаны</title>
@@ -22,36 +37,57 @@
 <link rel="apple-touch-icon" sizes="180x180" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
 <link rel="shortcut icon" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
 
-<body>
-
+<body id="top">
   <header>
     <div class="header-container">
       <a href="index.html" class="logo">BusAst</a>
+      <div class="header-controls">
+      <select class="city-select" id="citySelect">
+        <option value="astana" selected>Астана</option>
+        <option value="almaty">Алматы (скоро)</option>
+        <option value="shymkent">Шымкент (скоро)</option>
+      </select>
+    </div>
       <button class="theme-toggle" onclick="toggleTheme()">🌓 Сменить тему</button>
+      
     </div>
     <nav>
       <div class="nav-container">
-        <a href="index.html" class="nav-link">Главная</a>
-        <a href="tourists.html" class="nav-link">Для туристов</a>
-        <a href="routes.html" class="nav-link">Маршруты автобусов</a>
-        <a href="payment.html" class="nav-link">Оплата проезда</a>
-        <a href="closed.html" class="nav-link">Закрытые маршруты</a>
-        <a href="parks.html" class="nav-link active">Автопарки</a>
-        <a href="lrt.html" class="nav-link">Tarlan Astana LRT</a>
-      </div>
+        <div class="nav-link" data-href="index.html">Главная</div>
+        <div class="nav-link" data-href="tourists.html">Для туристов</div>
+        <div class="nav-link" data-href="routes.html">Маршруты автобусов</div>
+        <div class="nav-link" data-href="payment.html">Оплата проезда</div>
+        <div class="nav-link" data-href="closed.html">Закрытые маршруты</div>
+        <div class="nav-link active" data-href="parks.html">Автопарки</div>
+        <div class="nav-link" data-href="lrt.html">Tarlan Astana LRT</div>
+        <div class="nav-link" data-href="hubs.html">Пересадочные узлы</div>
+        <div class="nav-link" data-href="apps.html">Полезные приложения</div>
+        <div class="nav-link" data-href="calc.html">Калькулятор</div>
+        </div>
     </nav>
   </header>
 
   <main>
+    <span class="reading-time">Время чтения: 6 мин</span>
     <h2>Автобусные парки города</h2>
     <p style="margin-top: 0.5rem; color: var(--text-muted);">
       Информация о действующих, частных и прекративших деятельность автопарках Астаны.
     </p>
+    <div class="disclaimer-box">
+  <span class="disclaimer-icon">ℹ️</span>
+  <div class="disclaimer-content">
+    <p class="disclaimer-text">
+      Информация об автопарках и контактные данные размещены в справочных целях на основании общедоступных источников. <strong>BusAst.kz</strong> является независимым информационным проектом и не представляет интересы указанных организаций, если иное прямо не указано.
+    </p>
+    <p class="disclaimer-subtext">
+      <em>Обратите внимание: специальные шаттл-басы автопарки делят между собой в зависимости от загрузки и текущего расписания.</em>
+    </p>
+  </div>
+</div>
 
-   
     <div class="park-section" style="margin-top: 1.5rem;">
       <h3>
-        🏢 Действующие автобусные парки
+        Действующие автобусные парки
         <span class="badge badge-active">Работают</span>
       </h3>
       <div class="grid-cards">
@@ -61,7 +97,132 @@
           <div class="card-info">
             <p><strong>Подвижной состав:</strong> Yutong, Iveco.</p>
             <p><strong>Статус:</strong> Активный</p>
+  <div class="routes-count-summary">
+  <div class="count-item">
+    <span class="count-number">45</span>
+    <span class="count-label">городских</span>
+  </div>
+  <div class="count-item suburban">
+    <span class="count-number">26</span>
+    <span class="count-label">пригородных</span>
+  </div>
+  <div class="count-item express">
+    <span class="count-number">7</span>
+    <span class="count-label">экспресс</span>
+  </div>
+</div>
           </div>
+          <div class="park-info-block">
+          <div class="info-row">
+            <span class="info-label">Телефон приёмной:</span>
+            <a href="tel:+77172574100" class="info-link">+7 (7172) 54-16-26</a>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Телефон диспетчерской:</span>
+            <a href="tel:+77172574100" class="info-link">+7 (7172) 54-16-45</a>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Call-center:</span>
+            <a href="tel:+77172574100" class="info-link">+7 (775) 007 92 98</a>
+          </div>
+          
+          <div class="info-row">
+            <span class="info-label">Instagram:</span>
+            <a href="https://www.instagram.com/avtopark_01?utm_source=ig_web_button_share_sheet&rpxt=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" class="info-link">@avtopark_01</a>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Telegram-бот:</span>
+            <a href="https://t.me/AvtobusPark1Bot" target="_blank" rel="noopener" class="info-link">@AvtobusPark1Bot</a>
+          </div>
+        </div>
+
+        <div class="park-routes">
+          <strong>Обслуживаемые маршруты:</strong>
+          <div class="route-tags">
+          <span class="route-tag">1</span>
+          <span class="route-tag">3</span>
+          <span class="route-tag">4</span>
+          <span class="route-tag">5</span>
+          <span class="route-tag">5А</span>
+          <span class="route-tag">6</span>
+          <span class="route-tag">7</span>
+          <span class="route-tag">8</span>
+          <span class="route-tag">9</span>
+          <span class="route-tag">10</span>
+          <span class="route-tag">13</span>
+          <span class="route-tag">15</span>
+          <span class="route-tag">15А</span>
+          <span class="route-tag">17</span>
+          <span class="route-tag">20</span>
+          <span class="route-tag">21</span>
+          <span class="route-tag">23</span>
+          <span class="route-tag">24</span>
+          <span class="route-tag">24Н</span>
+          <span class="route-tag">25</span>
+          <span class="route-tag">31</span>
+          <span class="route-tag">32</span>
+          <span class="route-tag">33</span>
+          <span class="route-tag">35</span>
+          <span class="route-tag">36</span>
+          <span class="route-tag">40</span>
+          <span class="route-tag">41</span>
+          <span class="route-tag">44</span>
+          <span class="route-tag">55А/Б</span>
+          <span class="route-tag">58</span>
+          <span class="route-tag">59</span>
+          <span class="route-tag">60А/Б</span>
+          <span class="route-tag">61</span>
+          <span class="route-tag">62</span>
+          <span class="route-tag">63</span>
+          <span class="route-tag">69</span>
+          <span class="route-tag">71</span>
+          <span class="route-tag">72</span>
+          <span class="route-tag">73</span>
+          <span class="route-tag">75</span>
+          <span class="route-tag">76</span>
+          <span class="route-tag">80</span>
+          <span class="route-tag">81</span>
+          <span class="route-tag">82</span>
+          <span class="route-tag">83</span>
+          <span class="route-tag">85</span>
+          <span class="route-tag">121</span>
+          <span class="route-tag suburban">302 (Пригородный)</span>
+          <span class="route-tag suburban">303 (Пригородный)</span>
+          <span class="route-tag suburban">304 (Пригородный)</span>
+          <span class="route-tag suburban">305 (Пригородный)</span>
+          <span class="route-tag suburban">306 (Пригородный)</span>
+          <span class="route-tag suburban">307 (Пригородный)</span>
+          <span class="route-tag suburban">307А (Пригородный)</span>
+          <span class="route-tag suburban">308 (Пригородный)</span>
+          <span class="route-tag suburban">309 (Пригородный)</span>
+          <span class="route-tag suburban">310 (Пригородный)</span>
+          <span class="route-tag suburban">311 (Пригородный)</span>
+          <span class="route-tag suburban">312 (Пригородный)</span>
+          <span class="route-tag suburban">313 (Пригородный)</span>
+          <span class="route-tag suburban">314 (Пригородный)</span>
+          <span class="route-tag suburban">315 (Пригородный)</span>
+          <span class="route-tag suburban">316 (Пригородный)</span>
+          <span class="route-tag suburban">317 (Пригородный)</span>
+          <span class="route-tag suburban">318 (Пригородный)</span>
+          <span class="route-tag suburban">319 (Пригородный)</span>
+          <span class="route-tag suburban">320 (Пригородный)</span>
+          <span class="route-tag suburban">321 (Пригородный)</span>
+          <span class="route-tag suburban">322 (Пригородный)</span>
+          <span class="route-tag suburban">323 (Пригородный)</span>
+          <span class="route-tag suburban">326 (Пригородный)</span>
+          <span class="route-tag suburban">327 (Пригородный)</span>
+          <span class="route-tag suburban">328 (Пригородный)</span>
+          <span class="route-tag suburban">329 (Пригородный)</span>
+          <span class="route-tag express">501 (Экспресс)</span>
+          <span class="route-tag express">502 (Экспресс)</span>
+          <span class="route-tag express">503 (Экспресс)</span>
+          <span class="route-tag express">505 (Экспресс)</span>
+          <span class="route-tag express">506 (Экспресс)</span>
+          <span class="route-tag express">507 (Экспресс)</span>
+          <span class="route-tag express">508 (Экспресс)</span>
+        </div>
+        </div>
+        </div>
         </div>
 
         <div class="card">
@@ -70,6 +231,42 @@
           <div class="card-info">
             <p><strong>Подвижной состав:</strong> Iveco, Golden Dragon, Higer, МАЗ.</p>
             <p><strong>Статус:</strong> Активный</p>
+            <div class="routes-count-summary">
+  <div class="count-item">
+    <span class="count-number">7</span>
+    <span class="count-label">городских</span>
+  </div>
+  <div class="count-item express">
+    <span class="count-number">1</span>
+    <span class="count-label">экспресс</span>
+  </div>
+            </div>
+          <div class="park-info-block">
+          <div class="info-row">
+            <span class="info-label">Телефон приёмной:</span>
+            <a href="tel:+77172574100" class="info-link">+7 (7172) 53-17-52</a>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Телефон диспетчерской:</span>
+            <a href="tel:+77172574100" class="info-link">+7 (7172) 53-17-54</a>
+          </div>
+        </div>
+
+        <div class="park-routes">
+          <strong>Обслуживаемые маршруты:</strong>
+          <div class="route-tags">
+          <span class="route-tag">12</span>
+          <span class="route-tag">37</span>
+          <span class="route-tag">39</span>
+          <span class="route-tag">46</span>
+          <span class="route-tag">50</span>
+          <span class="route-tag">56</span>
+          <span class="route-tag">64</span>
+          <span class="route-tag express">504 (Экспресс)</span>
+</div>
+        </div>
+      </div>
+        </div>
           </div>
         </div>
 
@@ -79,6 +276,34 @@
           <div class="card-info">
             <p><strong>Подвижной состав:</strong> Iveco, Higer, Yutong, Луидор, JAC.</p>
             <p><strong>Статус:</strong> Активный</p>
+            <div class="routes-count-summary">
+  <div class="count-item">
+    <span class="count-number">8</span>
+    <span class="count-label">городских</span>
+  </div>
+            </div>
+          <div class="park-info-block">
+          <div class="info-row">
+            <span class="info-label">Телефон диспетчерской:</span>
+            <a href="tel:+77172574100" class="info-link">+7 771 103 20 74</a>
+          </div>
+        </div>
+
+        <div class="park-routes">
+          <strong>Обслуживаемые маршруты:</strong>
+          <div class="route-tags">
+          <span class="route-tag">19</span>
+          <span class="route-tag">28</span>
+          <span class="route-tag">29</span>
+          <span class="route-tag">29А</span>
+          <span class="route-tag">49</span>
+          <span class="route-tag">51</span>
+          <span class="route-tag">120</span>
+          <span class="route-tag">120</span>
+        </div>
+        </div>
+      </div>
+        </div>
           </div>
         </div>
 
@@ -88,7 +313,39 @@
           <div class="card-info">
             <p><strong>Подвижной состав:</strong> Iveco, Yutong, Golden Dragon.</p>
             <p><strong>Статус:</strong> Активный</p>
+            <div class="routes-count-summary">
+  <div class="count-item">
+    <span class="count-number">13</span>
+    <span class="count-label">городских</span>
+  </div>
+            </div>
+          <div class="park-info-block">
+          <div class="info-row">
+            <span class="info-label">Телефон:</span>
+            <a href="tel:+77172574100" class="info-link">+7 (7172) 37-92-46</a>
           </div>
+        </div>
+        <div class="park-routes">
+          <strong>Обслуживаемые маршруты:</strong>
+          <div class="route-tags">
+          <span class="route-tag">14</span>
+          <span class="route-tag">22</span>
+          <span class="route-tag">22А</span>
+          <span class="route-tag">30</span>
+          <span class="route-tag">42</span>
+          <span class="route-tag">43</span>
+          <span class="route-tag">45</span>
+          <span class="route-tag">52</span>
+          <span class="route-tag">53</span>
+          <span class="route-tag">57</span>
+          <span class="route-tag">65</span>
+          <span class="route-tag">68</span>
+          <span class="route-tag">70</span>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
         </div> 
         <div class="card">
           <h3>ТОО "Автобусный парк №7" | ТОО "Казан Экспресс"(Бортовой номер:Н000, О000)</h3>
@@ -96,6 +353,33 @@
           <div class="card-info">
             <p><strong>Подвижной состав:</strong> Iveco, Golden Dragon, Higer.</p>
             <p><strong>Статус:</strong> Активный</p>
+            <div class="count-item">
+            <span class="count-number">8</span>
+            <span class="count-label">городских</span>
+          </div>
+            </div>
+          <div class="park-info-block">
+          <div class="info-row">
+            <span class="info-label">Телефон:</span>
+            <a href="tel:+77172574100" class="info-link">+7 771 525 57 43</a>
+          </div>
+        </div>
+
+        <div class="park-routes">
+          <strong>Обслуживаемые маршруты:</strong>
+          <div class="route-tags">
+          <span class="route-tag">2</span>
+          <span class="route-tag">11</span>
+          <span class="route-tag">26</span>
+          <span class="route-tag">27</span>
+          <span class="route-tag">47</span>
+          <span class="route-tag">48</span>
+          <span class="route-tag">54</span>
+          <span class="route-tag">67</span>
+        </div>
+        </div>
+        </div>
+        </div>
           </div>
         </div>
         <div class="card">
@@ -104,7 +388,29 @@
           <div class="card-info">
             <p><strong>Подвижной состав:</strong> Iveco, Golden Dragon</p>
             <p><strong>Статус:</strong> Активный</p>
+            <div class="count-item">
+    <span class="count-number">3</span>
+    <span class="count-label">городских</span>
+  </div>
+            </div>
+          <div class="park-info-block">
+          <div class="info-row">
+            <span class="info-label">Телефон:</span>
+            <a href="tel:+77172574100" class="info-link">+7 771 494 21 41</a>
           </div>
+        </div>
+
+        <div class="park-routes">
+          <strong>Обслуживаемые маршруты:</strong>
+          <div class="route-tags">
+          <span class="route-tag">18</span>
+          <span class="route-tag">66</span>
+          <span class="route-tag">84</span>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
         </div>
         <div class="card">
           <h3>ТОО "Urban Ast"(Бортовой номер:R000)</h3>
@@ -112,45 +418,164 @@
           <div class="card-info">
             <p><strong>Подвижной состав:</strong> Iveco</p>
             <p><strong>Статус:</strong> Активный</p>
+            <div class="count-item">
+    <span class="count-number">2</span>
+    <span class="count-label">городских</span>
+  </div>
+            </div>
+          <div class="park-info-block">
+          <div class="info-row">
+            <span class="info-label">Телефон:</span>
+            <a href="tel:+77172574100" class="info-link">+7 775 107 10 06</a>
           </div>
+
+        </div>
+
+        <div class="park-routes">
+          <strong>Обслуживаемые маршруты:</strong>
+          <div class="route-tags">
+          <span class="route-tag">74</span>
+          <span class="route-tag">78</span>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
         </div>
       </div>
     </div>
 
     <div class="park-section">
       <h3>
-        🚫 Закрытые / Реорганизованные автопарки
+        Закрытые / Реорганизованные автопарки
         <span class="badge badge-closed">Закрыты</span>
       </h3>
-      <div class="grid-cards">
-        <div class="card">
-          <h3>ТОО "Автобусный парк №2"(Закрыт в январе 2020 года, Бортовой номер:B000)</h3>
-          <p>Автобусный парк № 2 закрылся из-за финансового конфликта между перевозчиком и акиматом. Городские власти прекратили выплату субсидий и задолжали компании 122 миллиона тенге, признавая этот долг лишь частично. В ответ автопарк из-за нехватки средств перестал выплачивать зарплату сотрудникам, накопив перед ними долг в 57 миллионов тенге за два месяца, а также задолжал 120 миллионов тенге по налогам. В итоге маршруты были остановлены, а водителей экстренно перевели работать в другие парки города.</p>
-          <div class="card-info">
-            <p><strong>Причина:</strong> Закрылся из-за взаимных долгов: акимат перестал выплачивать компании субсидии, а автопарк в ответ накопил миллионные задолженности по налогам и зарплатам перед водителями.</p>
-            <p><strong>Текущее состояние:</strong> Не обслуживает городские маршруты.</p>
-          </div>
-        </div>
+      <div class="parks-grid">
 
-        <div class="card">
-          <h3>ТОО Автобусный парк №5 "BUS"(Закрыт в январе 2024 года, Бортовой номер:F000)</h3>
-          <p>Многомиллионные долги и прекращение либо задержка субсидирования со стороны городских властей.</p>
-          <div class="card-info">
-            <p><strong>Причина:</strong> Компания закрылась из-за нехватки денег на обязательное обновление транспорта. Парк не смог закупать современные низкопольные автобусы с кондиционерами в лизинг и соответствовать новым жестким стандартам города.</p>
-            <p><strong>Текущее состояние:</strong> Не обслуживает городские маршруты.</p>
-          </div>
-        </div>
 
-        <div class="card">
-          <h3>ТОО "Автобусный парк Ырыс №8"(Закрыт в октябре 2019 года, Бортовой номер:I000)</h3>
-          <p>Не смог потянуть новые требования CTS: у него не было денег на покупку современных автобусов, а с введением электронного билетирования он лишился наличной выручки и погряз в убытках и штрафах за срыв графиков.</p>
-          <div class="card-info">
-            <p><strong>Причина:</strong> Компания закрылась из-за перехода города на электронную оплату и потерю наличной выручки. Парк регулярно срывал графики движения, из-за чего получал огромные штрафы, лишился госсубсидий и стал полностью нерентабельным.</p>
-            <p><strong>Текущее состояние:</strong> Не обслуживает городские маршруты.</p>
-          </div>
-        </div>
+  <div class="park-card closed-park">
+    <div class="park-header">
+      <h3>ТОО "Автобусный парк №2"</h3>
+      <span class="park-badge closed">Закрыт в январе 2020</span>
+    </div>
+    <div class="park-meta-info">Бортовой номер: B000</div>
+    
+    <p class="park-desc">
+      Автобусный парк № 2 закрылся из-за финансового конфликта между перевозчиком и акиматом
+    </p>
+    
+    <div class="park-info-block">
+      <div class="info-row">
+        <span class="info-label">Причина:</span>
+        <span class="info-value">Взаимные долги по субсидиям и налогам</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Текущее состояние:</span>
+        <span class="status-text-closed">Не обслуживает маршруты</span>
       </div>
     </div>
+
+    <div class="park-routes">
+      <strong>Ранее обслуживал маршруты:</strong>
+      <div class="route-tags">
+        <span class="route-tag">4</span>
+        <span class="route-tag">4A</span>
+        <span class="route-tag">5</span>
+        <span class="route-tag">7</span>
+        <span class="route-tag">16</span>
+        <span class="route-tag">17</span>
+        <span class="route-tag">22</span>
+        <span class="route-tag">22A</span>
+        <span class="route-tag">24</span>
+        <span class="route-tag">26</span>
+        <span class="route-tag">27</span>
+        <span class="route-tag">32</span>
+        <span class="route-tag">42</span>
+        <span class="route-tag">43</span>
+        <span class="route-tag">44</span>
+        <span class="route-tag">49</span>
+        <span class="route-tag">50</span>
+        <span class="route-tag">52</span>
+        <span class="route-tag">59</span>
+        <span class="route-tag">60</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="park-card closed-park">
+    <div class="park-header">
+      <h3>ТОО Автобусный парк №5 "BUS"</h3>
+      <span class="park-badge closed">Закрыт в январе 2024</span>
+    </div>
+    <div class="park-meta-info">Бортовой номер: F000</div>
+    
+    <p class="park-desc">
+      Многомиллионные долги и прекращение либо задержка субсидирования со стороны городских властей
+    </p>
+    
+    <div class="park-info-block">
+      <div class="info-row">
+        <span class="info-label">Причина:</span>
+        <span class="info-value">Нехватка средств на обновление автопарка</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Текущее состояние:</span>
+        <span class="status-text-closed">Маршруты перераспределены</span>
+      </div>
+    </div>
+
+    <div class="park-routes">
+      <strong>Ранее обслуживал маршруты:</strong>
+      <div class="route-tags">
+        <span class="route-tag">1</span>
+        <span class="route-tag">4</span>
+        <span class="route-tag">12</span>
+        <span class="route-tag">13</span>
+        <span class="route-tag">14</span>
+        <span class="route-tag">16</span>
+        <span class="route-tag">29</span>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="park-card closed-park">
+    <div class="park-header">
+      <h3>ТОО "Автобусный парк Ырыс №8"</h3>
+      <span class="park-badge closed">Закрыт в октябре 2019</span>
+    </div>
+    <div class="park-meta-info">Бортовой номер: I000</div>
+    
+    <p class="park-desc">
+      Не смог потянуть новые требования CTS: у него не было денег на покупку современных автобусов
+    </p>
+    
+    <div class="park-info-block">
+      <div class="info-row">
+        <span class="info-label">Причина:</span>
+        <span class="info-value">Переход на электронное билетирование и штрафы</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Текущее состояние:</span>
+        <span class="status-text-closed">Ликвидирован</span>
+      </div>
+    </div>
+
+    <div class="park-routes">
+      <strong>Ранее обслуживал маршруты:</strong>
+      <div class="route-tags">
+        <span class="route-tag">14</span>
+        <span class="route-tag">27</span>
+        <span class="route-tag">37</span>
+        <span class="route-tag">111</span>
+        <span class="route-tag">115</span>
+        <span class="route-tag">120</span>
+        <span class="route-tag suburban">27 (Пригородный)</span>
+      </div>
+    </div>
+  </div>
+</div>
   </main>
 
   <footer>
@@ -175,16 +600,20 @@
     </p>
   </div>
 
-    <div class="footer-section">
+     <div class="footer-section">
       <h4>Быстрая навигация</h4>
       <ul class="footer-nav">
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="tourists.html">Для туристов</a></li>
-        <li><a href="routes.html">Маршруты автобусов</a></li>
-        <li><a href="payment.html">Оплата проезда</a></li>
-        <li><a href="closed.html">Закрытые маршруты</a></li>
-        <li><a href="parks.html">Автопарки</a></li>
-        <li><a href="lrt.html">Tarlan Astana LRT</a></li>
+        <div class="footer-links">
+        <div class="footer-link" data-href="index.html">Главная</div>
+        <div class="footer-link" data-href="tourists.html">Для туристов</div>
+        <div class="footer-link" data-href="routes.html">Маршруты</div>
+        <div class="footer-link" data-href="payment.html">Оплата</div>
+        <div class="footer-link" data-href="closed.html">Закрытые маршруты</div>
+        <div class="footer-link" data-href="parks.html">Автопарки</div>
+        <div class="footer-link" data-href="lrt.html">Tarlan Astana LRT</div>
+        <div class="footer-link" data-href="hubs.html">Пересадочные узлы</div>
+        <div class="footer-link" data-href="apps.html">Приложения</div>
+        <div class="footer-link" data-href="calc.html">Калькулятор</div>
       </ul>
     </div>
   </div>
@@ -211,6 +640,40 @@
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme); 
   }
+</script>
+<div class="back-to-top" data-scroll-top title="Наверх">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</div>
+<script>
+  document.addEventListener('click', function(e) {
+   
+    const scrollTopBtn = e.target.closest('[data-scroll-top]');
+    if (scrollTopBtn) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+   
+    const target = e.target.closest('[data-href]');
+    if (target) {
+      const url = target.getAttribute('data-href');
+      const isExternal = target.getAttribute('data-target') === '_blank';
+
+      
+      if (e.ctrlKey || e.metaKey || e.button === 1) {
+        window.open(url, '_blank');
+        return;
+      }
+
+   
+      if (isExternal) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      } else {
+     
+        window.location.href = url;
+      }
+    }
+  });
 </script>
 </body>
 </html>

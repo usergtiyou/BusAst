@@ -10,6 +10,21 @@
 
   gtag('config', 'G-H6PNS1T2KX');
 </script>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0284c7">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BusAst">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('PWA Service Worker зарегистрирован успешно'))
+        .catch(err => console.log('Ошибка регистрации PWA:', err));
+    });
+  }
+</script>
 <link rel="icon" type="image/png" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,30 +39,41 @@
 <link rel="shortcut icon" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
 
 </head>
-<body>
+<body id="top">
 
   <header>
     <div class="header-container">
       <a href="index.html" class="logo">BusAst</a>
-      <button class="theme-toggle" onclick="toggleTheme()">🌓 Сменить тему</button>
+      <div class="header-controls">
+      <select class="city-select" id="citySelect">
+        <option value="astana" selected>Астана</option>
+        <option value="almaty">Алматы (скоро)</option>
+        <option value="shymkent">Шымкент (скоро)</option>
+      </select>
     </div>
-    <nav>
+      <button class="theme-toggle" onclick="toggleTheme()">🌓 Сменить тему</button>
+      
+    </div>
+  <nav>
       <div class="nav-container">
-        <a href="index.html" class="nav-link">Главная</a>
-        <a href="tourists.html" class="nav-link">Для туристов</a>
-        <a href="routes.html" class="nav-link">Маршруты автобусов</a>
-        <a href="payment.html" class="nav-link">Оплата проезда</a>
-        <a href="closed.html" class="nav-link">Закрытые маршруты</a>
-        <a href="parks.html" class="nav-link">Автопарки</a>
-        <a href="lrt.html" class="nav-link active">Tarlan Astana LRT</a>
-      </div>
+        <div class="nav-link" data-href="index.html">Главная</div>
+        <div class="nav-link" data-href="tourists.html">Для туристов</div>
+        <div class="nav-link" data-href="routes.html">Маршруты автобусов</div>
+        <div class="nav-link" data-href="payment.html">Оплата проезда</div>
+        <div class="nav-link" data-href="closed.html">Закрытые маршруты</div>
+        <div class="nav-link" data-href="parks.html">Автопарки</div>
+        <div class="nav-link active" data-href="lrt.html">Tarlan Astana LRT</div>
+        <div class="nav-link" data-href="hubs.html">Пересадочные узлы</div>
+        <div class="nav-link" data-href="apps.html">Полезные приложения</div>
+        <div class="nav-link" data-href="calc.html">Калькулятор</div>
+        </div>
     </nav>
   </header>
 
   <main>
-    
+    <span class="reading-time">Время чтения: 3 мин</span>
     <div class="lrt-hero">
-      <h1>🚝 Tarlan Astana LRT</h1>
+      <h1>Tarlan Astana LRT</h1>
       <p>
         <strong>Что такое Astana LRT?</strong> Это современная скоростная система лёгкого рельсового транспорта (Light Rail Transit), возводимая на надземных эстакадах. Проект предназначен для быстрых и бесшумных пассажирских перевозок вне городского автомобильного трафика, связывая ключевые транспортные хабы, спортивные сооружения и деловые центры столицы.
       </p>
@@ -75,7 +101,7 @@
 
     
     <div class="info-card">
-      <h3>🚀 Перспективы развития LRT</h3>
+      <h3>Перспективы развития LRT</h3>
       <p>
         В рамках дальнейшего развития транспортной системы столицы запланировано расширение линии LRT на <strong>26.5 километров</strong> с добавлением ещё <strong>20 новых станций</strong>. Это позволит охватить густонаселённые спальные районы Правобережья, перспективные жилые массивы и обеспечить прямую связь с выездными магистралями города.
       </p>
@@ -88,7 +114,7 @@
     <li><strong>График движения:</strong> ежедневно с 06:00 до 23:00</li>
   </ul>
   <p class="schedule-note">
-    ✅ График работы LRT фиксированный и не меняется даже в праздничные дни.
+    ✅График работы LRT фиксированный и не меняется даже в праздничные дни.
   </p>
 </div>
 <div class="info-card">
@@ -184,7 +210,7 @@
 
       <div class="line-card">
         <span class="line-badge line-3">Линия 3(Направление в сторону Жагалау)</span>
-        <p>Протяжённость 8,38. Номера станций:301-309. Протянется вдоль улицы Сыганак и проспекта Чингиза Айтматова к району ТРЦ «Хан Шатыр» и жилому массиву Жагалау.</p>
+        <p>Протяжённость 8,38 км. Номера станций:301-309. Протянется вдоль улицы Сыганак и проспекта Чингиза Айтматова к району ТРЦ «Хан Шатыр» и жилому массиву Жагалау.</p>
       </div>
 
       <div class="line-card">
@@ -219,16 +245,20 @@
     </p>
   </div>
 </div>
-    <div class="footer-section">
+     <div class="footer-section">
       <h4>Быстрая навигация</h4>
       <ul class="footer-nav">
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="tourists.html">Для туристов</a></li>
-        <li><a href="routes.html">Маршруты автобусов</a></li>
-        <li><a href="payment.html">Оплата проезда</a></li>
-        <li><a href="closed.html">Закрытые маршруты</a></li>
-        <li><a href="parks.html">Автопарки</a></li>
-        <li><a href="lrt.html">Tarlan Astana LRT</a></li>
+        <div class="footer-links">
+        <div class="footer-link" data-href="index.html">Главная</div>
+        <div class="footer-link" data-href="tourists.html">Для туристов</div>
+        <div class="footer-link" data-href="routes.html">Маршруты</div>
+        <div class="footer-link" data-href="payment.html">Оплата</div>
+        <div class="footer-link" data-href="closed.html">Закрытые маршруты</div>
+        <div class="footer-link" data-href="parks.html">Автопарки</div>
+        <div class="footer-link" data-href="lrt.html">Tarlan Astana LRT</div>
+        <div class="footer-link" data-href="hubs.html">Пересадочные узлы</div>
+        <div class="footer-link" data-href="apps.html">Приложения</div>
+        <div class="footer-link" data-href="calc.html">Калькулятор</div>
       </ul>
     </div>
   </div>
@@ -253,3 +283,39 @@
       localStorage.setItem('theme', newTheme);
     }
   </script>
+<div class="back-to-top" data-scroll-top title="Наверх">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</div>
+<script>
+  document.addEventListener('click', function(e) {
+   
+    const scrollTopBtn = e.target.closest('[data-scroll-top]');
+    if (scrollTopBtn) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+   
+    const target = e.target.closest('[data-href]');
+    if (target) {
+      const url = target.getAttribute('data-href');
+      const isExternal = target.getAttribute('data-target') === '_blank';
+
+      
+      if (e.ctrlKey || e.metaKey || e.button === 1) {
+        window.open(url, '_blank');
+        return;
+      }
+
+   
+      if (isExternal) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      } else {
+     
+        window.location.href = url;
+      }
+    }
+  });
+</script>
+</body>
+</html>

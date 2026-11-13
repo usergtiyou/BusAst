@@ -10,6 +10,21 @@
 
   gtag('config', 'G-H6PNS1T2KX');
 </script>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0284c7">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BusAst">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('PWA Service Worker зарегистрирован успешно'))
+        .catch(err => console.log('Ошибка регистрации PWA:', err));
+    });
+  }
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вокзалы и Аэропорт - Автобусы Астаны</title>
@@ -25,27 +40,38 @@
 </head>
 <!DOCTYPE html>
 <html lang="ru">
-<body>
+<body id="top">
 
   <header>
     <div class="header-container">
       <a href="index.html" class="logo">BusAst</a>
-      <button class="theme-toggle" onclick="toggleTheme()">🌓 Сменить тему</button>
+      <div class="header-controls">
+      <select class="city-select" id="citySelect">
+        <option value="astana" selected>Астана</option>
+        <option value="almaty">Алматы (скоро)</option>
+        <option value="shymkent">Шымкент (скоро)</option>
+      </select>
     </div>
-    <nav>
+      <button class="theme-toggle" onclick="toggleTheme()">🌓 Сменить тему</button>
+      
+    </div>
+  <nav>
       <div class="nav-container">
-        <a href="index.html" class="nav-link">Главная</a>
-        <a href="tourists.html" class="nav-link active">Для туристов</a>
-        <a href="routes.html" class="nav-link">Маршруты автобусов</a>
-        <a href="payment.html" class="nav-link">Оплата проезда</a>
-        <a href="closed.html" class="nav-link">Закрытые маршруты</a>
-        <a href="parks.html" class="nav-link">Автопарки</a>
-        <a href="lrt.html" class="nav-link">Tarlan Astana LRT</a>
-      </div>
+        <div class="nav-link" data-href="index.html">Главная</div>
+        <div class="nav-link active" data-href="tourists.html">Для туристов</div>
+        <div class="nav-link" data-href="routes.html">Маршруты автобусов</div>
+        <div class="nav-link" data-href="payment.html">Оплата проезда</div>
+        <div class="nav-link" data-href="closed.html">Закрытые маршруты</div>
+        <div class="nav-link" data-href="parks.html">Автопарки</div>
+        <div class="nav-link" data-href="lrt.html">Tarlan Astana LRT</div>
+        <div class="nav-link" data-href="hubs.html">Пересадочные узлы</div>
+        <div class="nav-link" data-href="apps.html">Полезные приложения</div>
+        <div class="nav-link" data-href="calc.html">Калькулятор</div>
+        </div>
     </nav>
   </header>
-
   <main>
+    <span class="reading-time">Время чтения: 4 мин</span>
     <h2>Главные транспортные узлы Астаны</h2>
     <p style="margin-top: 0.5rem; margin-bottom: 2rem; color: var(--text-muted);">
       Информация для гостей столицы: ключевые остановки, схемы движения и время ожидания транспорта.
@@ -57,7 +83,7 @@
         <img src="png/airport.png" alt="Международный аэропорт Астаны">
       </div>
       <div class="hub-content">
-        <h3 class="hub-title">✈️ Международный аэропорт им. Нурсултана Назарбаева</h3>
+        <h3 class="hub-title">Международный аэропорт им. Нурсултана Назарбаева</h3>
         <p class="hub-desc">
           Остановки расположены прямо перед Терминалом 1 (международные рейсы) и Терминалом 2 (внутренние рейсы). Маршруты в сторону города:
         </p>
@@ -116,13 +142,13 @@
         <img src="png/staryi.png" alt="Старый вокзал Астана-1">
       </div>
       <div class="hub-content">
-        <h3 class="hub-title">🚉 Железнодорожный вокзал «Астана-1» (Старый вокзал)</h3>
+        <h3 class="hub-title">Железнодорожный вокзал «Астана-1» (Старый вокзал)</h3>
         <p class="hub-desc">
           Исторический вокзал в правобережной части города. Для удобства пассажиров привокзальная площадь разделена на 4 зоны остановок.
         </p>
 
         
-        <h4 class="stop-heading">🚏 Остановка №1</h4>
+        <h4 class="stop-heading">Остановка №1</h4>
         <table class="route-table-custom">
           <thead>
             <tr>
@@ -142,7 +168,7 @@
         </table>
 
         
-        <h4 class="stop-heading">🚏 Остановка №2</h4>
+        <h4 class="stop-heading">Остановка №2</h4>
         <table class="route-table-custom">
           <thead>
             <tr>
@@ -155,7 +181,7 @@
             <tr><td class="route-num">№ 3</td><td class="route-stops">Вокзал Астана-1 ➔ ЦОН Сарыаркинского района ➔ Народный банк ➔ Военно-Исторический музей ВС РК ➔ площадь Защитников Отечества ➔ ТРЦ Астана-молл ➔ дом студентов МГУ ➔ ЖК Balausa ➔ Вокзал «Нұрлы жол»</td><td class="route-interval">10-12 мин</td></tr>
             <tr><td class="route-num">№ 14</td><td class="route-stops">Вокзал Астана-1 ➔ Национальный Театр Опера и Балета имени Куляш Байсеитовой ➔ ТЦ Асем ➔ ТЦ Тулпар ➔ Евразийский национальный университет ➔ ТРЦ Евразия ➔ Дворец Независимости ➔ Вокзал «Нұрлы жол» ➔ ЖК Эльбрус</td><td class="route-interval">10-15 мин</td></tr>
             <tr><td class="route-num">№ 19</td><td class="route-stops">Вокзал Астана-1 ➔ ЦОН Сарыаркинского района ➔ дворец жастар ➔ рынок Астаналык ➔ ТЦ Жаннур ➔ Евразийский национальный университет ➔ Городская поликлиника №6 ➔ Мечеть Хазрет Султан ➔ Дом министерств ➔ Казахконцерт имени Розы Баглановы ➔ Жилмассив Тельман</td><td class="route-interval">10-15 мин</td></tr>
-            <tr><td class="route-num">№ 22/22a</td><td class="route-stops">Вокзал Астана-1 ➔ Агротехнический университет ➔ ТЦ Тулпар ➔ ТЦ Алем ➔ Институт травматологии и ортопедии ➔ Городская больница № 1 ➔ Жилмассив Железнодорожный</td><td class="route-interval">10-15 мин</td></tr>
+            <tr><td class="route-num">№ 22/22A</td><td class="route-stops">Вокзал Астана-1 ➔ Агротехнический университет ➔ ТЦ Тулпар ➔ ТЦ Алем ➔ Институт травматологии и ортопедии ➔ Городская больница № 1 ➔ Жилмассив Железнодорожный</td><td class="route-interval">10-15 мин</td></tr>
             <tr><td class="route-num">№ 31</td><td class="route-stops">Вокзал Астана-1 ➔ Казахский национальный университет искусств ➔ Филармония имени Рахмадиева ➔ площадь Защитников Отечества ➔ ТД Орбита ➔ ТЦ Евразия ➔ Национальный научно-мединский центр ➔ ЖК Кернай</td><td class="route-interval">10-15 мин</td></tr>
             <tr><td class="route-num">№ 37</td><td class="route-stops">Космический центр ➔ стела "Звезда Астаны" ➔ Назарбаев университет ➔ Дворец единоборств имени Жаксылыка Ушкемпирова ➔ Кардиохирургический центр ➔ ЦОН Сарыаркинского района ➔ Детская поликлиника №3 ➔ Агротехнический университет ➔ Вокзал Астана-1 ➔ Астанаинерт</td><td class="route-interval">10-15 мин</td></tr>
             <tr><td class="route-num">№ 40</td><td class="route-stops">Вокзал Астана-1 ➔ Казахский национальный университет искусств ➔ Рынок Астаналык ➔ Институт травматологии и ортопедии ➔ ТРЦ Евразия ➔ ТРЦ Астана-молл ➔ Мечеть Хазрет Султан ➔ Дворец мира и согласия ➔ Дом Министерств ➔ Казахконцерт имени Розы Баглановы ➔ Министерство обороны ➔ ТРЦ Keruen ➔ Центр нового поколения Sana ➔ Барыс Арена ➔ Общежитие Назарбаев Университета ➔ Городская больница №2 ➔ Многопрофильная больница №3 ➔ ТРЦ KeruenCity</td><td class="route-interval">10-15 мин</td></tr>
@@ -165,7 +191,7 @@
         </table>
 
         
-        <h4 class="stop-heading">🚏 Остановка №3</h4>
+        <h4 class="stop-heading">Остановка №3</h4>
         <table class="route-table-custom">
           <thead>
             <tr>
@@ -189,7 +215,7 @@
         </table>
 
         
-        <h4 class="stop-heading">🚏 Остановка №4</h4>
+        <h4 class="stop-heading">Остановка №4</h4>
         <table class="route-table-custom">
           <thead>
             <tr>
@@ -215,7 +241,7 @@
         <img src="png/nurlyzhol.png" alt="Вокзал Нұрлы жол">
       </div>
       <div class="hub-content">
-        <h3 class="hub-title">🏢 Вокзал «Нұрлы жол» (Новый вокзал)</h3>
+        <h3 class="hub-title">Вокзал «Нұрлы жол» (Новый вокзал)</h3>
         <p class="hub-desc">
           Новый современный вокзальный комплекс на Левом берегу. Полный список маршрутов и городского транспорта:
         </p>
@@ -314,13 +340,17 @@
     <div class="footer-section">
       <h4>Быстрая навигация</h4>
       <ul class="footer-nav">
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="tourists.html">Для туристов</a></li>
-        <li><a href="routes.html">Маршруты автобусов</a></li>
-        <li><a href="payment.html">Оплата проезда</a></li>
-        <li><a href="closed.html">Закрытые маршруты</a></li>
-        <li><a href="parks.html">Автопарки</a></li>
-        <li><a href="lrt.html">Tarlan Astana LRT</a></li>
+        <div class="footer-links">
+        <div class="footer-link" data-href="index.html">Главная</div>
+        <div class="footer-link" data-href="tourists.html">Для туристов</div>
+        <div class="footer-link" data-href="routes.html">Маршруты</div>
+        <div class="footer-link" data-href="payment.html">Оплата</div>
+        <div class="footer-link" data-href="closed.html">Закрытые маршруты</div>
+        <div class="footer-link" data-href="parks.html">Автопарки</div>
+        <div class="footer-link" data-href="lrt.html">Tarlan Astana LRT</div>
+        <div class="footer-link" data-href="hubs.html">Пересадочные узлы</div>
+        <div class="footer-link" data-href="apps.html">Приложения</div>
+        <div class="footer-link" data-href="calc.html">Калькулятор</div>
       </ul>
     </div>
   </div>
@@ -343,5 +373,40 @@
       localStorage.setItem('theme', newTheme);
     }
   </script>
+  
+<div class="back-to-top" data-scroll-top title="Наверх">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</div>
+<script>
+  document.addEventListener('click', function(e) {
+   
+    const scrollTopBtn = e.target.closest('[data-scroll-top]');
+    if (scrollTopBtn) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+   
+    const target = e.target.closest('[data-href]');
+    if (target) {
+      const url = target.getAttribute('data-href');
+      const isExternal = target.getAttribute('data-target') === '_blank';
+
+      
+      if (e.ctrlKey || e.metaKey || e.button === 1) {
+        window.open(url, '_blank');
+        return;
+      }
+
+   
+      if (isExternal) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      } else {
+     
+        window.location.href = url;
+      }
+    }
+  });
+</script>
 </body>
 </html>

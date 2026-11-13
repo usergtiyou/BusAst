@@ -10,6 +10,21 @@
 
   gtag('config', 'G-H6PNS1T2KX');
 </script>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0284c7">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BusAst">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('PWA Service Worker зарегистрирован успешно'))
+        .catch(err => console.log('Ошибка регистрации PWA:', err));
+    });
+  }
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Маршруты автобусов - Автобусы Астаны</title>
@@ -23,27 +38,39 @@
 <link rel="apple-touch-icon" sizes="180x180" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
 <link rel="shortcut icon" href="png/Gemini_Generated_Image_47ujsf47ujsf47uj.jpg">
 </head>
-<body>
+<body id="top">
 
   <header>
     <div class="header-container">
       <a href="index.html" class="logo">BusAst</a>
-      <button class="theme-toggle" onclick="toggleTheme()">🌓 Сменить тему</button>
+      <div class="header-controls">
+      <select class="city-select" id="citySelect">
+        <option value="astana" selected>Астана</option>
+        <option value="almaty">Алматы (скоро)</option>
+        <option value="shymkent">Шымкент (скоро)</option>
+      </select>
     </div>
-    <nav>
+      <button class="theme-toggle" onclick="toggleTheme()">🌓 Сменить тему</button>
+      
+    </div>
+  <nav>
       <div class="nav-container">
-        <a href="index.html" class="nav-link">Главная</a>
-        <a href="tourists.html" class="nav-link">Для туристов</a>
-        <a href="routes.html" class="nav-link active">Маршруты автобусов</a>
-        <a href="payment.html" class="nav-link">Оплата проезда</a>
-        <a href="closed.html" class="nav-link">Закрытые маршруты</a>
-        <a href="parks.html" class="nav-link">Автопарки</a>
-        <a href="lrt.html" class="nav-link">Tarlan Astana LRT</a>
-      </div>
+        <div class="nav-link" data-href="index.html">Главная</div>
+        <div class="nav-link" data-href="tourists.html">Для туристов</div>
+        <div class="nav-link active" data-href="routes.html">Маршруты автобусов</div>
+        <div class="nav-link" data-href="payment.html">Оплата проезда</div>
+        <div class="nav-link" data-href="closed.html">Закрытые маршруты</div>
+        <div class="nav-link" data-href="parks.html">Автопарки</div>
+        <div class="nav-link" data-href="lrt.html">Tarlan Astana LRT</div>
+        <div class="nav-link" data-href="hubs.html">Пересадочные узлы</div>
+        <div class="nav-link" data-href="apps.html">Полезные приложения</div>
+        <div class="nav-link" data-href="calc.html">Калькулятор</div>
+        </div>
     </nav>
   </header>
 
   <main>
+    <span class="reading-time">Время чтения: 5 мин</span>
     <h2>Маршрутная сеть Астаны</h2>
     <p style="margin-top:0.4rem; color:var(--text-muted);">
       Полный перечень городских, пригородных и экспресс-автобусов столицы.
@@ -99,7 +126,7 @@
           <tr><td class="num-col">№ 19</td><td class="route-col">Вокзал Астана-1 ➔ Жилмассив Тельман</td></tr>
           <tr><td class="num-col">№ 20</td><td class="route-col">Агрогородок ➔ Школа-гимназия №74</td></tr>
           <tr><td class="num-col">№ 21</td><td class="route-col">Вокзал Астана-1 ➔ Вокзал "Нұрлы жол"</td></tr>
-          <tr><td class="num-col">№ 22/22а</td><td class="route-col">Вокзал Астана-1 ➔ Жилмассив Железнодорожный</td></tr>
+          <tr><td class="num-col">№ 22/22А</td><td class="route-col">Вокзал Астана-1 ➔ Жилмассив Железнодорожный</td></tr>
           <tr><td class="num-col">№ 23</td><td class="route-col">Вокзал Астана-1 ➔ Акмолинская областная больница №2</td></tr>
           <tr><td class="num-col">№ 24</td><td class="route-col">ЖК Бастау ➔ Разъезд №39</td></tr>
           <tr><td class="num-col">№ 24Н</td><td class="route-col">ЖК Бастау ➔ Жилмассив Нефтяников</td></tr>
@@ -107,7 +134,7 @@
           <tr><td class="num-col">№ 26</td><td class="route-col">ЖК Багыстан ➔ Магазин Айдана</td></tr>
           <tr><td class="num-col">№ 27</td><td class="route-col">ЖК Багыстан ➔ УМТО</td></tr>
           <tr><td class="num-col">№ 28</td><td class="route-col">ЖК Нура-Есиль ➔ Жилмассив Акбидай</td></tr>
-          <tr><td class="num-col">№ 29/29а</td><td class="route-col">Детский сад Даурен ➔ ЖК Жагалау-4</td></tr>
+          <tr><td class="num-col">№ 29/29А</td><td class="route-col">Детский сад Даурен ➔ ЖК Жагалау-4</td></tr>
           <tr><td class="num-col">№ 30</td><td class="route-col">ЖК Зелёный квартал ➔ Улица Сусамыр</td></tr>
           <tr><td class="num-col">№ 31</td><td class="route-col">ЖК Бастау ➔ Вокзал Астана-1</td></tr>
           <tr><td class="num-col">№ 32</td><td class="route-col">ЖК Эльбрус ➔ Улица Болашак</td></tr>
@@ -282,7 +309,7 @@
 
 <div class="route-info-box route-info-minibus">
   <p>
-    📱 <strong>Маршрут № 701</strong> - специализированное маршрутное такси, связывающее Косшы с селом Тайтобе. Отслеживание местоположения автобуса и удобная оплата проезда доступны в мобильном приложении <strong>Avtobys</strong>.
+    <strong>Маршрут № 701</strong> - специализированное маршрутное такси, связывающее Косшы с селом Тайтобе. Отслеживание местоположения автобуса и удобная оплата проезда доступны в мобильном приложении <strong>Avtobys</strong>.
   </p>
 </div>
 
@@ -396,16 +423,20 @@
     </p>
   </div>
 
-    <div class="footer-section">
+     <div class="footer-section">
       <h4>Быстрая навигация</h4>
       <ul class="footer-nav">
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="tourists.html">Для туристов</a></li>
-        <li><a href="routes.html">Маршруты автобусов</a></li>
-        <li><a href="payment.html">Оплата проезда</a></li>
-        <li><a href="closed.html">Закрытые маршруты</a></li>
-        <li><a href="parks.html">Автопарки</a></li>
-        <li><a href="lrt.html">Tarlan Astana LRT</a></li>
+        <div class="footer-links">
+        <div class="footer-link" data-href="index.html">Главная</div>
+        <div class="footer-link" data-href="tourists.html">Для туристов</div>
+        <div class="footer-link" data-href="routes.html">Маршруты</div>
+        <div class="footer-link" data-href="payment.html">Оплата</div>
+        <div class="footer-link" data-href="closed.html">Закрытые маршруты</div>
+        <div class="footer-link" data-href="parks.html">Автопарки</div>
+        <div class="footer-link" data-href="lrt.html">Tarlan Astana LRT</div>
+        <div class="footer-link" data-href="hubs.html">Пересадочные узлы</div>
+        <div class="footer-link" data-href="apps.html">Приложения</div>
+        <div class="footer-link" data-href="calc.html">Калькулятор</div>
       </ul>
     </div>
   </div>
@@ -440,5 +471,39 @@
       });
     }
   </script>
+<div class="back-to-top" data-scroll-top title="Наверх">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</div>
+<script>
+  document.addEventListener('click', function(e) {
+   
+    const scrollTopBtn = e.target.closest('[data-scroll-top]');
+    if (scrollTopBtn) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+   
+    const target = e.target.closest('[data-href]');
+    if (target) {
+      const url = target.getAttribute('data-href');
+      const isExternal = target.getAttribute('data-target') === '_blank';
+
+      
+      if (e.ctrlKey || e.metaKey || e.button === 1) {
+        window.open(url, '_blank');
+        return;
+      }
+
+   
+      if (isExternal) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      } else {
+     
+        window.location.href = url;
+      }
+    }
+  });
+</script>
 </body>
 </html>
